@@ -1,0 +1,75 @@
+
+            body {
+                h1 {
+                    text-align: center;
+                  }
+                  h2 {
+                    text-align: center;
+                  }
+                  h3 {
+                    text-align: center;
+                  }
+                margin: 0;
+                font-family: 'Roboto', sans-serif;
+                color: #ffffff;
+                background: linear-gradient(135deg,#afebf8, hwb(20 39% 10%));
+                body {  
+                
+                }
+                h1 {
+                font: weight 300px;
+                main {
+                    max-width: 900px;
+                    margin: 0 auto;
+                    padding: 40px;
+                    section {
+                        background: rgba(255, 255, 255, 0.1);
+                        padding: 25px;
+                        border-radius: 12px;
+                        margin-bottom: 30px;
+                      }
+                      img {
+                        width: 100%;
+                        max-width: 500px;
+                        display: block;
+                        margin: 20px auto;
+                        border-radius: 10px;
+                      }
+                      h1 {
+                        text-align: center;
+                        font-size: 42px;
+                        margin-bottom: 10px;
+                      }
+                      
+                      h2 {
+                        text-align: center;
+                        font-weight: 400;
+                        margin-bottom: 30px;
+                      }
+                      body {
+                        background: linear-gradient(135deg, #89CFF0, #F4A261);
+                      }
+                      p {
+                        line-height: 1.6;
+                      }
+                  }
+                }
+                img {
+                    width: 85%;
+                    max-width: 300px;
+                    height: auto;
+                  }
+
+              
+        
+    
+        background-repeat: no-repeat;
+        background-size: cover;      
+        background-position: center;   
+        background-attachment: fixed; 
+        
+
+
+    
+
+ }
