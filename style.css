@@ -1,75 +1,63 @@
 
+              /*page setup*/ 
+              /*This webpage was designed to simply present my analysis of the Luni.App website. 
+              I utilised semantic HTML elements such as <header> and <section> 
+              to organise my content in a consistent order, especially when it came to the thirteen questions and large chunks of text. 
+              This allowed for an easily readable page and made it identifiable as to what the question was and what the answer was.*/
             body {
+                margin: 0;
+                font-family: 'Roboto', sans-serif; /*When adding text, I selected the Roboto font, as it is clean, minimal and easy to follow when reading. its a commonly used website font, making it feel familiar to the user.*/
+                color: #ffffff; /*white text was used as it stands out nicely agaist the gradient but still ties into the style of the page*/
+                background: linear-gradient(100deg, #92d6f5, #F4A261); /*When styling my webpage, I wanted a minimalist and soft approach. I chose to use a gradient background to allow for this. I selected contrasting colours of a pastel blue and orange to create a visually appealing and clean background canvas. Having a light and airy feeling backdrop made it easier for the text to stand out and be navigated with ease.*/
+                background-repeat: no-repeat;
+                background-size: cover;      
+                background-position: center;   
+                background-attachment: fixed; 
+                }
+             
+                 
+                /*headings*/ /*Each question is placed in its own section so that the layout is clearly structured and not messy. This method also helped to separate each response, again improving readability for the user.*/
                 h1 {
                     text-align: center;
+                    font-size: 42px;/* I used a large text size to create a clear visual hirecahy and make the title stand out*/
+                    margin-bottom: 10px;
                   }
+                  
                   h2 {
                     text-align: center;
+                    font-weight: 400;
+                    margin-bottom: 30px;
                   }
+                  
                   h3 {
                     text-align: center;
+
                   }
-                margin: 0;
-                font-family: 'Roboto', sans-serif;
-                color: #ffffff;
-                background: linear-gradient(135deg,#afebf8, hwb(20 39% 10%));
-                body {  
-                
-                }
-                h1 {
-                font: weight 300px;
-                main {
-                    max-width: 900px;
-                    margin: 0 auto;
-                    padding: 40px;
+                 /*text*/
+                  p {
+                    line-height: 1.6;
+                  }
+                 /*sections*/
                     section {
-                        background: rgba(255, 255, 255, 0.1);
-                        padding: 25px;
-                        border-radius: 12px;
-                        margin-bottom: 30px;
+                        background: rgba(255, 255, 255, 0.1);/* this adds a semi transparent white overlay which seperates each section*/
+                        padding: 25px; /*this is the spacing which prevents text from sitting too close to the edges*/
+                        border-radius: 12px;/*here I added rounded borders to the overlays to reinforce the clean simple style*/
+                        margin-bottom: 30px;/*adding this allows a gap between sections keeping things organised and readable*/
                       }
+                 /*images*/ /*I included screenshots from the website to support and strengthen my responses and give visual context to the animation and interactions I described. This helps break up the text and make the analysis more engaging for users to comprehend.*/
                       img {
-                        width: 100%;
-                        max-width: 500px;
+                        width: 100%; /* this allows the image to scale down on smaller screens*/
+                        max-width: 500px;/*caps the image size so it doesn't become too large on smaller screens*/
+                        height: auto;
                         display: block;
-                        margin: 20px auto;
-                        border-radius: 10px;
+                        margin: 20px auto;/*this helps to center the image horizontally while leaving space above and below*/
+                        border-radius: 10px;/* I added this to round the corners of screenshot images to match the soft, minimilist asesthetic of the webpage*/
                       }
-                      h1 {
-                        text-align: center;
-                        font-size: 42px;
-                        margin-bottom: 10px;
-                      }
-                      
-                      h2 {
-                        text-align: center;
-                        font-weight: 400;
-                        margin-bottom: 30px;
-                      }
-                      body {
-                        background: linear-gradient(135deg, #89CFF0, #F4A261);
-                      }
-                      p {
-                        line-height: 1.6;
-                      }
-                  }
-                }
-                img {
-                    width: 85%;
-                    max-width: 300px;
-                    height: auto;
-                  }
+/*I used resources such as W3Schools and mdn to help understand HTML and CSS, including how to structure elements and apply styling. These resources supported me in turning class discussions into applied learning. 
+
+Some assistance was also received from AI (ChatGPT) for troubleshooting any issues and reconfirming concepts. However, all code was written, edited and adapted by me to meet the requirements.*/ 
 
               
-        
-    
-        background-repeat: no-repeat;
-        background-size: cover;      
-        background-position: center;   
-        background-attachment: fixed; 
-        
 
+     
 
-    
-
- }
