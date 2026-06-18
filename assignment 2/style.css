@@ -1,0 +1,382 @@
+/* Media Player - Music for Relaxation/Study Context*/ 
+/*———Design choices————*/
+
+/* I chose the relaxation/study context because it offered the most opportunity to create a considered visual experience. 
+I intended for the interface to be minimal, creating a design that feels calm and non-distracting, 
+allowing a student to have this open in the background without it drawing their focus away from their work. 
+This is reinforced through the colour palette, 
+the mauve gradient background was chosen to create a warm and soft enviroment grounding the user in a calm space.*/ 
+
+
+/*Colour palette
+   - #fee9c8 / #f4ece0 — soft cream used buttons stood out amougst gradiuent background and caught the attention of the eye
+   - #3a2412 — dark chocolate brown used for button text and big headings. This was contrasting against the cream while also staying warm-toned
+   - #d6c1aa — soft taupe used for secondary text
+   - Pink/mauve gradient — soft and calming, evoking relaxation*/
+     /*In designing this, I aimed to build a calm and inviting space for students to feel at ease and ready to study. 
+     I made the decision to utilise warm colours, chocolate browns, mauve pink and soft creams to create a soft and airy aesthetic that related to the relaxation/study context.
+     I wanted the colours to feel modern while encouraging a relaxed state ideal for a focused study session.*/
+
+/*———Extra feature - focus timer (pomodoro technique)———*/
+
+/*For my extra feature, I chose a focus timer as it directly supports the student context prompt. 
+Utilising the common Pomodoro technique (25 minutes) of focused work followed by a short break. This method is one of the most widely recognised and used study methods by students. 
+By building this into the music player, the user doesn’t need to externally source a timer through opening another tab or app ultimatley centralising the experience to one singular platform, minimising the exposure to distractions. 
+The timer itself counts down from 25:00 it can be paused and resumed, resetting on demand. 
+When the timer reaches zero, it displays the word “done” as a way to alert users in a very minimal way that they’re done and can have a break now.*/
+
+
+/* ---------- Body ---------- */
+/*Font - DM Sans (Google Fonts)
+     I chose DM Sans due to its clean and modern style, using it in Sans-serif ensures easy readability and an organised feel among users. 
+     I also considered Inter, another Sans-serif Google font, but it felt too stark. DM Sans, although still minimal, was able to create a natural feel, which ties nicely with the study context.*/ 
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #eebaba, #23010f66);
+    color: rgb(241, 232, 232);
+    font-family: "DM Sans", sans-serif;
+ }
+  
+  
+  /* ---------- Layout ---------- */
+  
+  
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  
+  /* ---------- Sidebar ---------- */
+  /*Originally, when mapping the webpage, I had a three-column layout structure the sidebar, main player, and right panel. 
+  This created an organised way to display information and generate a visual hierarchy. The design was familiar to users mimincing spotifys browser display.
+  However, when revisiting this, I decided the columns were creating the appearance of a smaller player and condensed the pages overall feel. 
+  I made the choice to remove these, which opened up space and made the page more cohesive and open, contributing to a more accessible sight for students. 
+  In order to still allow for some structure, I kept soft shadowed boxes around the key information on both the left and right sides to instil visual hierarchy.*/
+  
+  .sidebar {
+    width: 20%;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  
+  /* ---------- Library title text ---------- */
+  
+  .sidebar h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #281908;
+  }
+  
+  
+  /* ---------- Sidebar buttons ---------- */
+  
+  .sidebar button {
+    padding: 12px;
+    border: none;
+    border-radius: 24px;
+    margin-bottom: 12px;
+    background-color: #fee9c8;
+    color: #3a2412;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  
+  /* ---------- Sidebar button hover ---------- */
+  
+  .sidebar button:hover {
+    transform: scale(0.96);
+    background-color: #dbc2a5;
+  }
+  
+  
+  /* ---------- Main player ---------- */
+  
+  .main-player {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+  }
+  
+  
+  /* ---------- Vinyl record ---------- */
+  /*Incorperating the spin animation creates the illusion that the record is playing. 
+  This reinforces the idea of relaxtion/study music visually.*/ 
+  /*The vinyl record, as the central visual element, depicts the music as a physical experience, evoking comfort and familiarity from the user.
+ Enhancing this is the spinning animation when the sound begins to play, further expressing a tactile interaction.*/
+/*The vinyl record player component is the main visual element on my webpage, the record is an interactive and fun element spinning when audio is played and stopping when audio is paused. 
+Having this tactile imagery created a fun, engaging way of seeing music play. The continuous loop cycle of the spin as the song plays actually adds as a calming feature running in the background while the student studies. 
+This short animation uses an animation play state, allowing it to be toggled via JavaScript without restarting the animation from 0 degrees each time.*/
+  
+  .vinyl-record img {
+    width: 350px;
+    animation: spin 10s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+  
+  /* ---------- Song information ---------- */
+  
+  .song-information {
+    text-align: center;
+  }
+  
+  .song-information h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .song-information p {
+    font-size: 1.1rem;
+    color: #ead8c2;
+  }
+  
+  
+  /* ---------- Right panel ---------- */
+  
+  .right-panel {
+    width: 20%;
+    padding: 30px;
+    
+  }
+  
+  
+  /* ---------- Timer box ---------- */
+
+/* ---------- Timer box ---------- */
+/*The focus timer box sits on the right side of my design as opposed to the centre of the screen, as it’s a supporting tool assisting in study and focus. 
+Placing it there allows it to still be highly visible and accessible while allowing the vinyl player to be the primary focus. 
+The increased font size and slight bolding of the text ensure it stands out and isn’t lost in between texts. 
+The soft card behind it allows it to also have presence while still feeling light and airy among the gradient background.*/
+  
+  .timer-box {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+   .timer-controls button {
+       
+        width: fit-content;
+        height: auto;
+        padding: 12px 20px;
+        margin-bottom: 12px;
+        border: none;
+        border-radius: 24px;
+        background-color: #fee9c8;
+        color: #3a2412;
+        font-size: 0.9rem;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+
+.timer-controls button:hover {
+    background-color: #dbc2a5;
+    transform: scale(0.96);
+
+    
+}
+
+  
+  /* ---------- Next up text ---------- */
+  
+  .next-up {
+    background-color: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  
+  /* ---------- Playlist ---------- */
+  
+  .playlist {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  /* ---------- Playlist buttons ---------- */
+  
+  .playlist button {
+    border: none;
+    border-radius: 18px;
+    padding: 12px 18px;
+    background-color: #f4ece0;
+    color: #3a2412;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  
+  /* ---------- Playlist button hover ---------- */
+  
+  .playlist button:hover {
+    transform: scale(0.95);
+    background-color: #dbc2a5;
+  }
+  
+  
+  /* ---------- Controls ---------- */
+/*The control buttons are placed outside of the main layout div and reach the full width at the bottom of the screen, mimicking conventional media players and music apps, allowing for familiarity. 
+I adapted the buttons to be circulur tieing into the rounded and soft aesthetic theme, supporting the relaxed mood. 
+I used display: flex with justify/align centre to ensure the icons sat perfectly in the middle of the button despite the icons varying shapes. 
+This created an overall cohesive feel to the design.*/
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    width: 100%;
+}
+      
+
+  
+  
+  /* ---------- Player buttons ---------- */
+  
+  .controls button {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f4ece0;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+  
+  
+  /* ---------- Player button hover ---------- */
+  
+  .controls button:hover {
+    transform: scale(0.92);
+    background-color: #d9c3a5;
+  }
+  
+  
+  /* ---------- Player icons ---------- */
+  
+  .controls img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  
+  /* ---------- Progress bar ---------- */
+  
+  #progress-bar-container {
+    width: 300px;
+    height: 10px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  
+  /* ---------- Progress bar fill ---------- */
+  
+  #progress-bar {
+    width: 0%;
+    height: 100%;
+    display: block;
+    background-color: #f0c9b0;
+    transition: width 0.4s ease;
+  }
+  
+  
+  /* ---------- Hidden video ---------- */
+  
+  .main-screen {
+    display: none;
+  }
+  
+  
+  /* ---------- links ---------- */
+  
+  a {
+    color: white;
+  }
+  
+  
+  /* ---------- Footer ---------- */
+  
+  footer {
+    text-align: center;
+    padding: 10px;
+  }
+
+  #timer-display {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 14px;
+  }
+  .next-up h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #281908;
+    margin-bottom: 10px;
+  }
+  .timer-controls {
+    display: flex;
+    gap: 8px;
+  }
+   .timer-box h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #281908;
+    margin-bottom: 10px;
+   }
+
+
+    /*——Refrences——
+
+   Audio -
+- Erokia, "Ambient Wave" — provided by RMIT interactive media course resources
+- p-hase, "Hes" — provided by RMIT interactive media course resources  
+- p-hase, "Leapt" — provided by RMIT interactive media course resources
+
+   Images - 
+- Vinyl record image generated using ChatGPT May, 2026
+  icons -
+- All icons by Icons8 (https://icons8.com)
+
+ Fonts - 
+DM Sans serif by Colophon Foundry, Google Fonts  (https://fonts.google.com)
+
+AI tools -
+- Claude (claude.ai) by Anthropic — used for debugging, restructuring JavaScript throughout development
+- ChatGPT 2026 — used to generate a PNG vinyl record image 
+
+Code -
+- Base media player code provided by Rohit’s interactive media course resource RMIT (https://rohitashokkhot.github.io/vplayer/)*/

@@ -1,0 +1,110 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #030205;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  cursor: none;
+  font-family: sans-serif;
+}
+
+#canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  opacity: 0.01;
+  filter: blur(40px);
+  transition:
+    opacity 0.9s ease,
+    filter  0.9s ease,
+    width   1.0s cubic-bezier(0.34, 1.15, 0.64, 1),
+    height  1.0s cubic-bezier(0.34, 1.15, 0.64, 1);
+  will-change: transform, opacity, filter, width, height;
+  pointer-events: none;
+}
+
+.orb.active {
+  opacity: 0.88;
+  filter: blur(5px);
+}
+
+#cursor {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+  mix-blend-mode: overlay;
+}
+
+#hint {
+  position: fixed;
+  bottom: 5rem;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.392);
+  font-size: 0.80rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 10;
+  white-space: nowrap;
+  animation: hintFade 1.5s ease 4s forwards;
+}
+
+@keyframes hintFade {
+  to { opacity: 0; }
+}
+
+/* STYLE.CSS — HOVER AS ART Keira Izzard - Interactive Media A3*/
+ 
+/*This style css controls the visual styling of the conceptual design. The action I used was hover, and the context is an experimental browser art experience where soft circles drift across a dark background and reveal themselves when the users cursor moves near them. */
+
+/* Body
+To customise the users cursor experience I used a full viewpoint, no scroll and no default cursor this allows the user to freely explore the page. The hidden overflow clips any circle that bleeds past the viewport. Cursor:none removes the browser default to the custom cursor ring takes over this creates an intentional and immersive feel. The background is near black with a slight blue tint to it (#) rather than a pure black, this was done to give a subtle depth to the page and makes the coloured circles feel like they are glowing from within. */
+
+
+/* Position:fixed keeps it pinned to the viewport  at all times. All circles are positioned absolute inside this div and move with each frame through JavaScript using translate 3d. */
+
+
+/* Circles 
+Border-radius: 50% keeps every form a perfect circle at all times. Mix-blend-mode:screen is a design decision I made where two circles overlap, their RGB colour values are added together. On a near black background this means colours only ever brighten at intercepts, they never darken. This delivers luminous tones and an almost glowing effect. The piece is partly generative with filter:blur (40px) at rest makes circles appear as soft glowing orbs as oppose to rigid. This blur directly mimics some of my inspo pics in my presentations mood board, where the orbs feel light and lively. Opacity:0.1 keeps circles barely visible until the user makes contact with their cursor. This creates an element of surprise when users do hover over as the orbs are revealed. Will-change hints to the browser to promote each circle to its own GPU compositor layer, ensuring transitions are smooth at 60fps. Pointer-events:none means the circles themselves never intercept mouse events, all interaction is handled by the JavaScript proximity check. The trasntion cubic-bezier(0.34,1.15,0.64 1) on width/height creates a gentle overshoot so the circle slightly expands past its target size before settling this makes the orbs feel alive. */
+
+
+/* Circle active state
+
+When the orbs are revealed this is through hover proximity. The active class is added by JavaScript when the cursor enters the reveal radius distance of a circles centre. Two things happen, opacity rises to 0.88, and full colour will present. Filter drops from 40px blur to 5px the circle sharpens from a diffuse cloud into a defined glowing orb. The contrast between the resting blur and active sharpness is what creates the reveal moment. */
+
+
+/* Custom cursor 
+
+Replacing the default browser cursor with a thin white ring, pointer-events:none is critical, without it, the cursor div would block all mouse events from reaching the unrevealed elements beneath. Mix-blend-mode:overlay makes the ring reactive to colours beneath it rather than sitting as a flat white circle on top */
+
+
+/*The hint text
+I chose to incorporate a minimal prompt that fades out after 4 seconds which asks users “move your cursor”. Although no permanent instructions are needed for my website, the orbs are designed to be discovered naturally through curiosity. A small piece of text can help guide users who may be confused at first. Low opacity keeps it present without competing with the circles. */
+
+
+
+
+
+
+
+
+
+
+

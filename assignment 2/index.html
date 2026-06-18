@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+
+
+       <main class="layout">
+    
+    <aside class="sidebar"> 
+    <h2>Library</h2>
+    <nav class="top-nav">
+      <button class="nav button">Home</button>
+      <button class="nav button">Ambient Study</button>
+      <button class="nav button">Late Night Jazz</button>
+      <button class="nav button">Focus Timer</button>
+    </nav>
+ </aside>
+
+    <section class="main-player">
+    <div class="vinyl-record">
+      <img src="vinyl.png" alt="Vinyl record">
+    </div>
+    <div class=" song-information">
+        <h1>Ambient Wave</h1>
+        <p>Erokia</p>
+      </div>
+      <div class="playlist">
+        <button id="track1-button">Ambient Wave</button> 
+        <button id="track2-button">Hes</button>
+        <button id="track3-button">Leapt</button>
+        </div>
+        <audio src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3" id="my-audio"></audio>
+        </section>
+
+        <aside class="right-panel">
+        <div class="timer-box">
+          <h3>Focus Timer</h3>
+          <p id="timer-display">25:00</p>
+          <div class="timer-controls">
+            <button id="timer-start">Start</button>
+            <button id="timer-reset">Reset</button>
+        </div>
+        </div>
+        <div class="next-up">
+          <h3>Next Up</h3> 
+          <p>Hes - p-hase</p> 
+          <p>Leapt - p-hase</p> 
+        </div>
+    </aside>
+
+    </main>
+
+    <div class="controls">
+        <button id="play-pause-button">
+          <img src="https://img.icons8.com/ios-glyphs/30/play--v2.png" alt="Play" id="play-pause-img" />
+        </button>
+        <button id="mute-unmute-button">
+          <img src="https://img.icons8.com/ios-glyphs/30/no-audio--v1.png" alt="Mute" id="mute-unmute-img" />
+        </button>
+        <button id="fast-forward-button">
+          <img src="https://img.icons8.com/ios-glyphs/30/fast-forward.png" alt="Fast forward" />
+        </button>
+        <div id="progress-bar-container">
+          <span id="progress-bar"></span>
+        </div>
+        <button id="fullscreen-button">
+          <img src="https://img.icons8.com/ios-glyphs/30/full-screen--v1.png" alt="Fullscreen" />
+        </button>
+        <button id="heart-button">
+          <img src="https://img.icons8.com/?size=36&id=DFU1kReSUccu&format=png&color=000000" alt="Like" />
+        </button>
+        <div id="likes"></div>
+      </div>
+    
+      <footer>
+        Icons by <a href="https://icons8.com/">Icons8</a>
+      </footer>
+
+</body>
+</html>
